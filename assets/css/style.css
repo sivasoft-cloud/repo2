@@ -354,15 +354,14 @@ main {
   border-radius: 8px;
 }
 
-info-content .title-right {
-  color: var(--white-1);
+.info-content .title.right {
+  color: var(--black-1);
   background: var(--onyx);
   font-size: var(--fs-8);
   font-weight: var(--fw-300);
   width: max-content;
   padding: 3px 12px;
   border-radius: 8px;
-  float: left;
 }
 
 .info_more-btn {
