@@ -319,6 +319,7 @@ main {
   max-height: 112px;
   overflow: hidden;
   transition: var(--transition-2);
+  position:absolute;
 }
 
 .sidebar.active { max-height: 405px; }
@@ -345,6 +346,16 @@ main {
 }
 
 .info-content .title {
+  color: var(--white-1);
+  background: var(--onyx);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-300);
+  width: max-content;
+  padding: 3px 12px;
+  border-radius: 8px;
+}
+
+.info-content .title1 {
   color: var(--white-1);
   background: var(--onyx);
   font-size: var(--fs-8);
