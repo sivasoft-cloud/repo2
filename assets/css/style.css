@@ -352,21 +352,7 @@ main {
   width: max-content;
   padding: 3px 12px;
   border-radius: 8px;
-  position: relative; /* Add this line to position it */
 }
-
-.info-content .title::after {
-  content: "Your Extra Title"; /* Add your extra title text here */
-  position: absolute;
-  top: 0;
-  right: -15px; /* Adjust the right spacing as needed */
-  background: var(--orange-yellow-crayola);
-  font-size: var(--fs-7); /* Adjust the font size as needed */
-  padding: 3px 12px; /* Adjust the padding as needed */
-  border-radius: 8px;
-  color: var(--white-2);
-}
-
 .info_more-btn {
   position: absolute;
   top: -15px;
