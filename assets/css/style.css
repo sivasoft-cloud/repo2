@@ -354,6 +354,17 @@ main {
   border-radius: 8px;
 }
 
+.title-right {
+  color: var(--white-1);
+  background: var(--onyx);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-300);
+  width: max-content;
+  padding: 3px 12px;
+  border-radius: 8px;
+  float: right;
+}
+
 .info_more-btn {
   position: absolute;
   top: -15px;
