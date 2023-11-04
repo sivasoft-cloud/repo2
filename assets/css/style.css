@@ -363,6 +363,8 @@ main {
   width: max-content;
   padding: 3px 12px;
   border-radius: 8px;
+  position:reletive;
+  left:20px;
 }
 
 .info_more-btn {
