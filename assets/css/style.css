@@ -314,14 +314,21 @@ main {
   #SIDEBAR
 \*-----------------------------------*/
 
-.sidebar {
+/* Your existing CSS */
+
+/* Add the CSS for the new title on the right */
+.title-container {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 15px;
   max-height: 112px;
   overflow: hidden;
   transition: var(--transition-2);
 }
 
-.sidebar.active { max-height: 405px; }
+.sidebar.active {
+  max-height: 405px;
+}
 
 .sidebar-info {
   position: relative;
@@ -344,9 +351,20 @@ main {
   margin-bottom: 10px;
 }
 
+/* Style for the existing title */
 .info-content .title {
   color: var(--white-1);
   background: var(--onyx);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-300);
+  width: max-content;
+  padding: 3px 12px;
+  border-radius: 8px;
+}
+
+/* CSS for the new title on the right */
+.info-content .extra-title {
+  color: var(--white-1);
   font-size: var(--fs-8);
   font-weight: var(--fw-300);
   width: max-content;
@@ -379,12 +397,18 @@ main {
 }
 
 .info_more-btn:hover,
-.info_more-btn:focus { background: var(--bg-gradient-yellow-1); }
+.info_more-btn:focus {
+  background: var(--bg-gradient-yellow-1);
+}
 
 .info_more-btn:hover::before,
-.info_more-btn:focus::before { background: var(--bg-gradient-yellow-2); }
+.info_more-btn:focus::before {
+  background: var(--bg-gradient-yellow-2);
+}
 
-.info_more-btn span { display: none; }
+.info_more-btn span {
+  display: none;
+}
 
 .sidebar-info_more {
   opacity: 0;
@@ -427,7 +451,9 @@ main {
   font-size: var(--fs-7);
 }
 
-.contact-info address { font-style: normal; }
+.contact-info address {
+  font-style: normal;
+}
 
 .social-list {
   display: flex;
@@ -443,10 +469,9 @@ main {
   font-size: 18px;
 }
 
-
-.social-item .social-link:hover { color: var(--light-gray); }
-
-
+.social-item .social-link:hover {
+  color: var(--light-gray);
+}
 
 
 
