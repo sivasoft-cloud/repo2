@@ -32,7 +32,7 @@ jobs:
         with:
           commit_message: "Auto: Code Formatted"
           commit_options: "--signoff"
-          repository: .
+          repository: sivasoft-cloud/repo2
           commit_user_name: sivasoft-cloud
           commit_user_email: sivakumarsivaraja@gmail.com
           commit_author: sivasoft-cloud <sivakumarsivaraja@gmail.com>
