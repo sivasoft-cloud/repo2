@@ -28,6 +28,11 @@ jobs:
           # Format JavaScript files
           npx prettier --write "assets/js/script.js"
 
+      - name: Configure Git
+        run: |
+          git config user.email "sivakumarsivaraja@gmail.com"
+          git config user.name "sivasoft-cloud"
+
       - name: Auto-commit changes
         run: |
           git add .
