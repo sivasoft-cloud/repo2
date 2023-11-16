@@ -37,5 +37,5 @@ jobs:
         run: |
           git add .
           git commit -m "Auto: Code Formatted" --signoff
-          git remote add origin_with_token "https://${{ secrets.GH_TOKEN }}@github.com/sivasoft-cloud/repo2.git"
+          git remote add origin_with_token "https://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@github.com/sivasoft-cloud/repo2.git"
           git push origin_with_token master
