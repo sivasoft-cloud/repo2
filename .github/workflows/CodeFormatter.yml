@@ -7,9 +7,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3.1.0
-        with:
-          repository: sivasoft-cloud/repo2
-          path: repo2
 
       - name: Setup Node.js
         uses: actions/setup-node@v3.1.0
@@ -18,12 +15,10 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          cd repo2  # Change to the repository directory
           npm install -g prettier stylelint
 
       - name: Format HTML, CSS, and JavaScript
         run: |
-          cd repo2  # Change to the repository directory
           # Format HTML files
           npx prettier --write "index.html"
 
