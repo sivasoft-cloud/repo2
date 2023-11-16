@@ -33,9 +33,12 @@ jobs:
           git config user.email "sivakumarsivaraja@gmail.com"
           git config user.name "sivasoft-cloud"
 
+      - name: Debug Token
+        run: echo "Token: ${{ secrets.GH_TOKEN }}"
+
       - name: Auto-commit changes
         run: |
           git add .
           git commit -m "Auto: Code Formatted" --signoff
-          git remote add origin_with_token "https://${{ secrets.GH_TOKEN }}@github.com/sivasoft-cloud/repo2.git"
+          git remote add origin_with_token "https://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@github.com/sivasoft-cloud/repo2.git"
           git push origin_with_token master
