@@ -1,29 +1,33 @@
 name: Code Formatter
 on: [push, workflow_dispatch]
+
 jobs:
-  PEP8:
+  format_code:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3.1.0
-      - name: Setup html
-        uses: actions/setup-python@v4.3.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3.1.0
         with:
-          python-version: 3.9
-      - name: Install Python lint libraries
+          node-version: '14'
+
+      - name: Install Dependencies
         run: |
-          pip install autopep8 autoflake isort black
-      - name: Check for Showstoppers
-        run: >
-          autopep8 --verbose --in-place --recursive --aggressive --aggressive
-          --ignore=W605 .
-      - name: Remove Unused Imports and Variables
-        run: >
-          autoflake --in-place --recursive --remove-all-unused-imports
-          --remove-unused-variables --ignore-init-module-imports .
-      - name: Lint with Isort and Black
+          npm install -g prettier stylelint
+
+      - name: Format HTML, CSS, and JavaScript
         run: |
-          isort .
-          black .
+          # Format HTML files
+          npx prettier --write "**/*.html"
+
+          # Format CSS files
+          npx prettier --write "**/*.css"
+
+          # Format JavaScript files
+          npx prettier --write "**/*.js"
+
       - uses: stefanzweifel/git-auto-commit-action@v4.15.4
         with:
           commit_message: "Auto: Code Formatted"
