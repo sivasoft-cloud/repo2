@@ -33,9 +33,6 @@ jobs:
           git config user.email "sivakumarsivaraja@gmail.com"
           git config user.name "sivasoft-cloud"
 
-      - name: Debug Token
-        run: echo "Token: ${{ secrets.GH_TOKEN }}"
-
       - name: Auto-commit changes
         run: |
           git add .
