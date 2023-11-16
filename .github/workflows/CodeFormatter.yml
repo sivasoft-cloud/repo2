@@ -20,7 +20,7 @@ jobs:
       - name: Format HTML, CSS, and JavaScript
         run: |
           # Format HTML files
-          npx prettier --write "/index.html"
+          npx prettier --write "sivasoft-cloud/repo2/index.html"
 
           # Format CSS files
           npx prettier --write "assets/css/style.css"
