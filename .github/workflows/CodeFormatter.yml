@@ -28,11 +28,8 @@ jobs:
           # Format JavaScript files
           npx prettier --write "assets/js/script.js"
 
-      - uses: stefanzweifel/git-auto-commit-action@v4.15.4
-        with:
-          commit_message: "Auto: Code Formatted"
-          commit_options: "--signoff"
-          repository: sivasoft-cloud/repo2
-          commit_user_name: sivasoft-cloud
-          commit_user_email: sivakumarsivaraja@gmail.com
-          commit_author: sivasoft-cloud <sivakumarsivaraja@gmail.com>
+      - name: Auto-commit changes
+        run: |
+          git add .
+          git commit -m "Auto: Code Formatted" --signoff
+          git push
