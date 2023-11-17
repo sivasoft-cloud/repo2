@@ -22,13 +22,13 @@ jobs:
       run: npm install
 
     - name: Lint and fix HTML
-      run: npx htmlhint --fix 'index.html'
+      run: npx htmlhint --fix 'index.html' -vv
 
     - name: Lint and fix CSS
-      run: npx stylelint 'assets/css/style.css' --fix
+      run: npx stylelint 'assets/css/style.css' --fix -vv
 
     - name: Lint and fix JavaScript
-      run: npx eslint 'assets/js/script.js' --fix
+      run: npx eslint 'assets/js/script.js' --fix -vv
 
     - name: Create pull request
       uses: peter-evans/create-pull-request@v2.4.4
