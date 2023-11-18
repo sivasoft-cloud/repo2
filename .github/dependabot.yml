@@ -1,16 +1,32 @@
 version: 2
 updates:
-- package-ecosystem: pip
-  directory: "/"
-  schedule:
-    interval: daily
-    time: "00:00"
-    timezone: "Asia/Kolkata"
-  labels:
-    - "dependencies"
-  open-pull-requests-limit: 50
-  ignore:
-    - dependency-name: "python-telegram-bot"
-    # Ignoring all ptb updates
-    - dependency-name: "sqlalchemy"
-    # Ignoring all sqlalchemy updates
+  - package-ecosystem: gitsubmodule
+    directories:
+      - "index.html"
+      - "/assets/css/style.css"
+      - "/assets/js/script.js"
+    schedule:
+      interval: daily
+    open-pull-requests-limit: 10
+    reviewers:
+      - sivasoft-cloud
+  - package-ecosystem: npm
+    directories:
+      - "index.html"
+      - "/assets/css/style.css"
+      - "/assets/js/script.js"
+    schedule:
+      interval: daily
+    open-pull-requests-limit: 10
+    reviewers:
+      - sivasoft-cloud
+  - package-ecosystem: "github-actions"
+    directories:
+      - "index.html"
+      - "/assets/css/style.css"
+      - "/assets/js/script.js"
+    schedule:
+      interval: daily
+    open-pull-requests-limit: 10
+    reviewers:
+      - sivasoft-cloud
