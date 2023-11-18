@@ -26,7 +26,21 @@ jobs:
         # Add your linting or code enhancement command here
         # For example, using ESLint for JavaScript linting
         # Replace the command below with your actual enhancement command
-        npx eslint --fix .
+        npx eslint --fix /assets/js/
+
+    - name: Lint CSS
+      run: |
+        # Add your CSS linting or enhancement command here
+        # Replace the command below with your actual enhancement command
+        # For example, using stylelint for CSS linting
+        npx stylelint /assets/css/
+
+    - name: Lint HTML
+      run: |
+        # Add your HTML linting or enhancement command here
+        # Replace the command below with your actual enhancement command
+        # For example, using HTMLHint for HTML linting
+        npx htmlhint index.html
 
     - name: Commit and Push Changes
       run: |
