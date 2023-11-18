@@ -3,7 +3,7 @@ name: Code Enhancement
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   enhance:
