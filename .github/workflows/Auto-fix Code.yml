@@ -1,0 +1,63 @@
+name: Auto-fix Code
+
+on:
+  pull_request:
+    paths:
+      - '**/*.js'
+      - '**/*.css'
+      - 'index.html'
+      - '/assets/js/script.js'
+      - '/assets/css/style.css'
+
+jobs:
+  eslint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+      with:
+        repository: ${{ github.repository }}  # Use the current repository
+        ref: ${{ github.event.before }} # Use the commit before the PR changes
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14'
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Run ESLint Auto-fix
+      run: npx eslint --fix /assets/js/script.js
+
+  stylelint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+      with:
+        repository: ${{ github.repository }}  # Use the current repository
+        ref: ${{ github.event.before }} # Use the commit before the PR changes
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14'
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Run Stylelint Auto-fix
+      run: npx stylelint --fix /assets/css/style.css
+
+    - name: Commit and Push Changes
+      run: |
+        git config --local user.email "actions@github.com"
+        git config --local user.name "GitHub Actions"
+        git add .
+        git commit -m "Auto-fix code"
+        git push origin HEAD:${{ github.event.before }}
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
