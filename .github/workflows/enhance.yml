@@ -21,6 +21,9 @@ jobs:
     - name: Install Dependencies
       run: npm install
 
+    - name: Install stylelint-config-standard from GitHub
+      run: npm install --save-dev github:stylelint/stylelint-config-standard
+
     - name: Install ESLint and Related Packages
       run: npm install eslint eslint-config-prettier eslint-plugin-prettier --save-dev
 
