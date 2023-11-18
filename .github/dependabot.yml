@@ -11,3 +11,8 @@ updates:
     directory: "/assets"
     schedule:
       interval: "daily"
+# boilerplate
+  - package-ecosystem: "github-actions"
+    directory: "index.html"
+    schedule:
+      interval: "daily"
