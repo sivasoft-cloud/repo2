@@ -21,11 +21,14 @@ jobs:
     - name: Install Dependencies
       run: npm install
 
+    - name: Create ESLint Configuration
+      run: npm init @eslint/config
+
     - name: Lint JavaScript
       run: |
         # Add your linting or code enhancement command here
         # Ensure the path is correct and relative to the repository root
-        npx eslint --fix assets/js/script.js
+        npx eslint --fix assets/js/script.js --config .eslintrc.js
 
     - name: Lint CSS
       run: |
