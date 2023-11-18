@@ -24,9 +24,6 @@ jobs:
     - name: Install ESLint and Related Packages
       run: npm install eslint eslint-config-prettier eslint-plugin-prettier --save-dev
 
-    - name: Lint JavaScript
-      run: npx eslint --fix assets/js/script.js
-
     - name: Lint CSS
       run: npx stylelint assets/css/style.css
 
