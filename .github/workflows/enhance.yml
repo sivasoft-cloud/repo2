@@ -22,7 +22,7 @@ jobs:
       run: npm install
 
     - name: Lint JavaScript
-      run: npx eslint --fix assets/js/script.js
+      run: npx eslint --fix --config .eslintrc.js assets/js/script.js
 
     - name: Lint CSS
       run: npx stylelint assets/css/style.css
@@ -35,4 +35,4 @@ jobs:
         git config --local user.email "sivakumarsivaraja@gmail.com"
         git config --local user.name "sivasoft-cloud"
         git commit -am "Code Enhancement"
-        git push https://$GH_TOKEN@github.com/$GITHUB_REPOSITORY.git HEAD:master
+        git push
