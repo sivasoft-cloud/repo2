@@ -3,11 +3,12 @@ name: Auto-fix Code
 on:
   pull_request:
     paths:
-      - '**/*.js'
-      - '**/*.css'
       - 'index.html'
       - '/assets/js/script.js'
       - '/assets/css/style.css'
+  push:
+    branches:
+      - master
 
 jobs:
   eslint:
@@ -54,8 +55,8 @@ jobs:
 
     - name: Commit and Push Changes
       run: |
-        git config --local user.email "actions@github.com"
-        git config --local user.name "GitHub Actions"
+        git config --local user.email "sivakumarsivaraja@gmail.com"
+        git config --local user.name "sivasoft-cloud"
         git add .
         git commit -m "Auto-fix code"
         git push origin HEAD:${{ github.event.before }}
