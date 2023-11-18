@@ -21,8 +21,11 @@ jobs:
     - name: Install Dependencies
       run: npm install
 
+    - name: Install ESLint Plugins
+      run: npm install eslint-plugin-prettier@latest --save-dev
+
     - name: Lint JavaScript
-      run: npx eslint --fix --config .eslintrc.js assets/js/script.js
+      run: npx eslint --fix --config assets/js/.eslintrc.js assets/js/script.js
 
     - name: Lint CSS
       run: npx stylelint assets/css/style.css
