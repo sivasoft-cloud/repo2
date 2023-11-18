@@ -19,33 +19,30 @@ jobs:
         node-version: 14
 
     - name: Install Dependencies
-      run: npm install  # Adjust this line based on your project's needs
+      run: npm install
 
     - name: Lint JavaScript
       run: |
         # Add your linting or code enhancement command here
-        # For example, using ESLint for JavaScript linting
-        # Replace the command below with your actual enhancement command
-        npx eslint --fix /assets/js/script.js
+        # Ensure the path is correct and relative to the repository root
+        npx eslint --fix assets/js/script.js
 
     - name: Lint CSS
       run: |
         # Add your CSS linting or enhancement command here
-        # Replace the command below with your actual enhancement command
-        # For example, using stylelint for CSS linting
-        npx stylelint /assets/css/style.css
+        # Ensure the path is correct and relative to the repository root
+        npx stylelint assets/css/style.css
 
     - name: Lint HTML
       run: |
         # Add your HTML linting or enhancement command here
-        # Replace the command below with your actual enhancement command
-        # For example, using HTMLHint for HTML linting
+        # Ensure the path is correct and relative to the repository root
         npx htmlhint index.html
 
     - name: Commit and Push Changes
       run: |
-        git config --local user.email "actions@github.com"
-        git config --local user.name "GitHub Actions"
+        git config --local user.email "sivakumarsivaraja@gmail.com"
+        git config --local user.name "sivasoft-cloud"
         git add .
         git commit -m "Code Enhancement"
         git push
