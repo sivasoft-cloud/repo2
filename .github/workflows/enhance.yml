@@ -21,8 +21,11 @@ jobs:
     - name: Install Dependencies
       run: npm install
 
+    - name: Initialize or Update package.json
+      run: npm init -y || true
+
     - name: Create ESLint Configuration
-      run: npm init @eslint/config
+      run: npx eslint --init
 
     - name: Lint JavaScript
       run: |
