@@ -1,5 +1,5 @@
 {
-  "name": "SivaSoft Portfolio",
+  "name": "SivaSoft-Portfolio",
   "version": "1.0.0",
   "description": "Your project description",
   "main": "index.js",
@@ -10,7 +10,7 @@
   "author": "sivasoft-cloud",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^8.4.0",
+    "eslint": "^8.54.0",
     "stylelint": "^14.0.0",
     "htmlhint": "^0.15.0"
   }
