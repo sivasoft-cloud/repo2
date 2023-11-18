@@ -1,0 +1,17 @@
+{
+  "name": "SivaSoft Portfolio",
+  "version": "1.0.0",
+  "description": "Your project description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix assets/js/script.js && stylelint assets/css/style.css && htmlhint index.html"
+  },
+  "author": "sivasoft-cloud",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.4.0",
+    "stylelint": "^14.0.0",
+    "htmlhint": "^0.15.0"
+  }
+}
