@@ -8,9 +8,12 @@ on:
       - 'assets/js/script.js'
       - 'assets/css/style.css'
       - 'index.html'
-  pull_request:
-    branches:
-      - master
+  workflow_dispatch:  # Manual trigger
+    inputs:
+      build-trigger:
+        description: 'Trigger the build manually'
+        required: true
+        default: 'yes'
 
 jobs:
   build:
