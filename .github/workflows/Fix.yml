@@ -1,0 +1,41 @@
+name: Web Development CI
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'assets/js/script.js'
+      - 'assets/css/style.css'
+      - 'index.html'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]  # You can adjust the Node.js version as needed
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0  # Fetch the entire history for accurate path matching
+        token: ${{ secrets.GH_TOKEN }}  # Use the custom token for authentication
+
+    - name: Set up Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        
+    - name: Install dependencies, lint, and build
+      run: |
+        npm install
+        # Adjust the following commands based on your project setup
+        # For example, if you use a bundler like webpack, replace 'npm run build:all' with the appropriate command
+        npm run lint
+        npm run build
+      env:
+        CI: true
