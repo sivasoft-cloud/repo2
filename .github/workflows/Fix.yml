@@ -45,3 +45,15 @@ jobs:
         npm run build
       env:
         CI: true
+
+  trigger_repo2_workflow:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Trigger workflow in another repository
+      uses: peter-evans/repository-dispatch@v2
+      with:
+        token: ${{ secrets.GH_TOKEN }}
+        repository: sivasoft-cloud/repo2
+        event-type: manual-build  # Event type defined in the target repository's workflow
+        client-payload: '{"build-trigger": "yes"}'
